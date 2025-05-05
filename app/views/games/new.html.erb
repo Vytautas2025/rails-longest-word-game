@@ -1,0 +1,8 @@
+<%= @letters %>
+
+<form action="/score" method="post" data-turbo="false">
+  <input type="text" name="letter" placeholder="Your word here">
+  <input type="submit">
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<%= hidden_field_tag :letters, @letters.join %>
+</form>
